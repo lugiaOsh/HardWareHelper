@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:fitsSystemWindows="true"
+
+    tools:context=".EncyclopediaActivity">
+
+    <!-- 搜尋框 -->
+
+    <EditText
+        android:id="@+id/searchBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="10dp"
+
+        android:background="@android:drawable/editbox_background"
+        android:hint="搜尋元件..."
+        android:padding="10dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- 分類按鈕 -->
+
+    <LinearLayout
+        android:id="@+id/filterLayout"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="8dp"
+
+        android:gravity="center"
+        android:orientation="horizontal"
+
+        app:layout_constraintTop_toBottomOf="@id/searchBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- 全部 -->
+
+        <Button
+            android:id="@+id/btnAll"
+            android:layout_width="80dp"
+            android:layout_height="48dp"
+            android:text="全部"/>
+
+        <!-- Sensor -->
+
+        <Button
+            android:id="@+id/btnSensor"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+
+            android:layout_marginStart="8dp"
+
+            android:text="Sensor"/>
+
+        <!-- IC -->
+
+        <Button
+            android:id="@+id/btnIC"
+            android:layout_width="80dp"
+            android:layout_height="48dp"
+
+            android:layout_marginStart="8dp"
+
+            android:text="IC"
+            android:textSize="20sp"/>
+
+        <!-- + -->
+
+        <Button
+            android:id="@+id/button"
+
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+
+            android:layout_marginStart="8dp"
+
+            android:backgroundTint="#D8C2FF"
+
+            android:text="+"
+            android:textColor="#2E1A47"
+            android:textStyle="bold"
+            android:textSize="28sp"
+
+            android:gravity="center"
+            android:padding="0dp"/>
+
+    </LinearLayout>
+
+    <!-- 空結果提示 -->
+
+    <TextView
+        android:id="@+id/emptyView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="沒有符合的搜尋結果"
+        android:textColor="#888"
+        android:textSize="16sp"
+
+        android:visibility="gone"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filterLayout"/>
+
+    <!-- RecyclerView -->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filterLayout"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
